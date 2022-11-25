@@ -49,20 +49,20 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="{% static '/aroma/blog.html' %}">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% static '/aroma/single-blog.html' %}">Blog Details</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'single-blog' %}">Blog Details</a></li>
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="{% static '/aroma/login.html' %}">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% static '/aroma/register.html' %}">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% static '/aroma/tracking-order.html' %}">Tracking</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'tracking-order' %}">Tracking</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="{% static '/aroma/contact.html' %}">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
             </ul>
 
             <ul class="nav-shop">

@@ -24,3 +24,27 @@ def checkout(request):
 
 def single_product(request):
     return render(request, 'aroma/single-product.html')
+
+
+def contact(request):
+    return render(request, 'aroma/contact.html')
+
+
+def blog(request):
+    return render(request, 'aroma/blog.html')
+
+
+def single_blog(request):
+    return render(request, 'aroma/single-blog.html')
+
+
+def login(request):
+    return render(request, 'aroma/login.html')
+
+
+def register(request):
+    return render(request, 'aroma/register.html')
+
+
+def tracking_order(request):
+    return render(request, 'aroma/tracking-order.html')
