@@ -27,23 +27,7 @@
     </div>
   </section>
   <!--================ Hero banner start =================-->
-  <div class="navbar-nav">
-    {% if user.is_authenticated %}
-      <a class="nav-item nav-link" href="{% url 'product-create' %}">Новый продукт</a>
-      <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
-      <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
-    {% else %}
-      <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
-      <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
-    {% endif %}
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-      {% endfor %}
-    {% endif %}
-  </div>
+
   {% for product in products %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ product.author.profile.image.url }}">
@@ -58,11 +42,11 @@
           </div>
         </article>
     {% endfor %}
-    <div class="pagination justify-content-center"> 
+    <div class="pagination justify-content-center">
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
-        
+
         <a class="btn btn-outline-info mb-4 mr-1" href="?page=1">Первая</a>
         <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
       {% endif %}
@@ -115,13 +99,13 @@
     <div class="container">
       <div class="section-intro pb-60px">
         <p>Popular Item in the market</p>
-        <h2>Trending <span class="section-intro__style">Product</span></h2>
+        <h2>Main <span class="section-intro__style">Product</span></h2>
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product1.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product11.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -129,16 +113,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Accessories</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Quartz Belt Watch</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Cement</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Euro Cement</a></h4>
+              <p class="card-product__price">360 som</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product2.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product22.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -146,16 +130,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Beauty</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Women Freshwash</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Wood</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Reiks 5х2.5х4м</a></h4>
+              <p class="card-product__price">22 som/m</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product3.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product33.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -163,16 +147,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Decor</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Room Flash Light</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Household products</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Starter pack</a></h4>
+              <p class="card-product__price">1250 som</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product4.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product44.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -180,16 +164,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Decor</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Room Flash Light</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Consumable</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Starter pack</a></h4>
+              <p class="card-product__price">1990 som</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product5.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product55.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -197,16 +181,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Accessories</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Man Office Bag</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Metal</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Starter pack</a></h4>
+              <p class="card-product__price">10000 som</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product6.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product66.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -214,16 +198,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Kids Toy</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Charging Car</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Сoating</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Сolored slate</a></h4>
+              <p class="card-product__price">410 som/m²</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product7.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product77.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -231,16 +215,16 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Accessories</p>
-              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Blutooth Speaker</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Conolization</p>
+              <h4 class="card-product__title"><a href="{% static '/aroma/single-product.html' %}">Stainless steel pipe set</a></h4>
+              <p class="card-product__price">6550 som</p>
             </div> 
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="card-img" src="{% static '/aroma/img/product/product8.png' %}" alt="">
+              <img class="card-img" src="{% static '/aroma/img/product/product88.png' %}" alt="">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
@@ -248,9 +232,9 @@
               </ul>
             </div>
             <div class="card-body">
-              <p>Kids Toy</p>
-              <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p>Tools</p>
+              <h4 class="card-product__title"><a href="#">Starter pack</a></h4>
+              <p class="card-product__price">2990 som</p>
             </div>
           </div>
         </div>

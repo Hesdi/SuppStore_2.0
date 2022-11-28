@@ -118,7 +118,6 @@ a {
   width: 100%;
   z-index: 9999;
   transition: background .4s,all .3s linear;
-  box-shadow: 0 10px 27px 3px rgba(221,221,221,.3)
 }
 .header_area .navbar {
   background: 0 0;
@@ -131,7 +130,7 @@ a {
 }
 .header_area .navbar .nav .nav-item .nav-link {
   text-transform: capitalize;
-  color: #222;
+  color: #D9D9D9;
   display: inline-block
 }
 @media (min-width:991px) {
@@ -155,7 +154,10 @@ a {
   border-radius: 0;
   box-shadow: none;
   margin: 0;
-  background: #fff
+  background: #37475A;
+}
+.main_menu{
+  background: #37475A;
 }
 @media (min-width:992px) {
   .header_area .navbar .nav .nav-item.submenu ul {
@@ -1075,8 +1077,8 @@ a {
 .button-header {
   padding: 10px 45px;
   background: 0 0;
-  color: #222;
-  border-color: #eee
+  color: #ffc107;
+  border-color: #ffc107;
 }
 .button-hero {
   padding: 12px 41px
