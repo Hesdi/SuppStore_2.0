@@ -723,7 +723,7 @@ a {
 .hero-carousel__slideOverlay {
   position: absolute;
   bottom: 50px;
-  background: #384aeb;
+  background: #ffc107;
   padding: 23px 90px 23px 25px;
   transform: translateY(50px);
   opacity: 0;
@@ -777,12 +777,12 @@ a {
   border: 0;
   border-radius: 0;
   padding: 7px 12px;
-  background: #8894ff
+  background: #343a40
 }
 .card-product__imgOverlay li button i,
 .card-product__imgOverlay li button span {
   font-size: 15px;
-  color: #fff;
+  color: #ffc107;
   vertical-align: middle
 }
 .card-product__imgOverlay li button:hover {
@@ -804,7 +804,7 @@ a {
   transform: translateY(0)
 }
 .card-product:hover .card-product__title a {
-  color: #384aeb
+  color: #ffc107
 }
 .offer {
   background: url("../img/home/parallax-bg.png") right center no-repeat;
