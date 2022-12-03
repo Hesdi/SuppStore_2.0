@@ -110,3 +110,36 @@ main h2{
   width: 200px;
   transition: .5s;
 }
+
+.login_form{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.login_form li, .login_form span{
+  display: none;
+  font-size: 12px;
+  text-align: left;
+}
+.login_form input{
+  border: none;
+  border-bottom: 2px solid rgba(131, 131, 131, 0.348);
+  outline: none;
+  background-color: #fff;
+  margin: 10px 0;
+  width: 100%;
+}
+.login_form input:active{
+  background-color: #fff;
+}
+.login_form .button-login{
+  background-color: rgb(255, 189, 57);
+  color: #fff!important;
+  border-radius: 50px!important ;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.login_form .button-login:hover{
+  background-color: rgb(170, 113, 0);
+}
