@@ -1,0 +1,100 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/slidre.css' %}">
+  <title>My Page</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="{% static 'main/media/logo.png' %}" alt="logo">
+      <nav>
+        <ul>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Premium</a></li>
+          <li><a href="#">Log in</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="banner">
+      <img src="{% static 'main/media/header.png' %}" alt="h">
+      <h1>Lorem <span>impsum</span> dolor sit amet consectetur adipisicing elit. Fugiat vero <span>tempore</span> obcaecati</h1>
+      <img src="{% static 'main/media/header-2.png' %}" alt="h">
+    </div>
+  </header>
+  <main>
+    <div class="slider" data-slider="itc-slider" data-loop="true" data-autoplay="true" data-interval="5000">
+      <div class="slider__wrapper">
+        <div class="slider__items">
+          <div class="slider__item">
+            <div style="background-image: url(static/main/media/header.png)">
+            </div>
+        </div>
+          <div class="slider__item">
+            <div style="background-image: url(static/main/media/header-2.png)">
+            </div>
+        </div>
+          <div class="slider__item">
+            <div style="background-image: url(static/main/media/hummer.jpg)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider__control" data-slide="prev"></button>
+      <button class="slider__control" data-slide="next"></button>
+      <ol class="slider__indicators">
+        <li data-slide-to="1"></li>
+        <li data-slide-to="2"></li>
+        <li data-slide-to="3"></li>
+      </ol>
+    </div>
+    <div class="content">
+      <h2>Supplies</h2>
+      <div class="items">
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span> 
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>
+        <a class="card" href="#">
+          <span>Title</span>
+          <img src="{% static 'main/media/hummer.jpg' %}" alt="item">
+          <span>100$</span>
+        </a>  
+      </div>
+    </div>
+    <div class="brick"></div>
+  </main>
+  <script src="{% static 'main/js/slider.js' %}"></script>
+</body>
+</html>
