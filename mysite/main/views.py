@@ -13,7 +13,10 @@ from .models import Product
 
 
 def category(request):
-    return render(request, 'aroma/category.html')
+    context = {
+        'products': Product.objects.all()
+    }
+    return render(request, 'aroma/category.html', context)
 
 
 def cart(request):
@@ -84,7 +87,7 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
-    fields = ['prod_name', 'prod_description', 'prod_price']
+    fields = ['prod_name', 'prod_description', 'prod_price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -93,7 +96,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
 
 class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Product
-    fields = ['prod_name', 'prod_description', 'prod_price']
+    fields = ['prod_name', 'prod_description', 'prod_price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
