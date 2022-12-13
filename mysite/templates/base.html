@@ -1,6 +1,7 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +14,22 @@
   <link rel="stylesheet" href="{% static '/aroma/vendors/nice-select/nice-select.css' %}">
   <link rel="stylesheet" href="{% static '/aroma/vendors/owl-carousel/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static '/aroma/vendors/owl-carousel/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static '/main/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static '/main/css/category.css' %}">
 
   <link rel="stylesheet" href="{% static '/aroma/css/style.css' %}">
 </head>
+
 <body>
-  
+
   {%block banner_area%}{%endblock%}
   <!--================ Start Header Menu Area =================-->
-  <header class="header_area">
+  <header class="header_area fixed">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="{% url 'main-index' %}"><img src="{% static '/aroma/img/logo.png' %}" width="140" height="29" alt=""></a>
+          <a class="navbar-brand logo_h" href="{% url 'main-index' %}"><img src="{% static '/aroma/img/logo.png' %}"
+              width="140" height="29" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -33,7 +38,8 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item {%block active_home%}{%endblock%} "><a class="nav-link" href="{% url 'main-index' %}">Home</a></li>
+              <li class="nav-item {%block active_home%}{%endblock%} "><a class="nav-link"
+                  href="{% url 'main-index' %}">Home</a></li>
               <li class="nav-item {%block active_submenu%}{%endblock%} submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
@@ -42,14 +48,6 @@
                   <li class="nav-item"><a class="nav-link" href="{% url 'checkout' %}">Product Checkout</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'confirmation' %}">Confirmation</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">Shopping Cart</a></li>
-                </ul>
-              </li>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'single-blog' %}">Blog Details</a></li>
                 </ul>
               </li>
               <li class="nav-item submenu dropdown">
@@ -65,47 +63,51 @@
             </ul>
 
 
-<ul class="nav-shop">
+            <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
+              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
+                    class="nav-shop__circle">3</span></button> </li>
               <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
             </ul>
           </div>
-            <div class="navbar-nav">
-                {% if user.is_authenticated %}
-                  <a class="nav-item nav-link" href="{% url 'product-create' %}">Новый продукт</a>
-                  <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
-                  <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
-                {% else %}
-                  <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
-                  <a class="nav-item nav-link" href="{% url 'register' %}">Sing in</a>
-                {% endif %}
-                {% if messages %}
-                  {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">
-                      {{ message }}
-                    </div>
-                  {% endfor %}
-                {% endif %}
+          <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'product-create' %}">Add product</a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Sing in</a>
+            {% endif %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              {{ message }}
             </div>
+            {% endfor %}
+            {% endif %}
+          </div>
         </div>
       </nav>
     </div>
   </header>
   <!--================ End Header Menu Area =================-->
+  <main>
+    {%block content%}{%endblock%}
+  </main>
 
-  {%block content%}{%endblock%}
-
-  <!-- ================ Subscribe section start ================= -->      
+  <!-- ================ Subscribe section start ================= -->
   <section class="subscribe-position">
     <div class="container">
       <div class="subscribe text-center">
         <h3 class="subscribe__title">Get Update From Anywhere</h3>
         <p>Bearing Void gathering light light his eavening unto dont afraid</p>
         <div id="mc_embed_signup">
-          <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+          <form target="_blank"
+            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+            method="get" class="subscribe-form form-inline mt-5 pt-1">
             <div class="form-group ml-sm-auto">
-              <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
+              <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
               <div class="info"></div>
             </div>
             <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
@@ -114,14 +116,14 @@
             </div>
 
 
-</form>
+          </form>
         </div>
-        
+
       </div>
     </div>
   </section>
-  <!-- ================ Subscribe section end ================= -->      
-  <!--================ Start footer Area  =================-->  
+  <!-- ================ Subscribe section end ================= -->
+  <!--================ Start footer Area  =================-->
   <footer class="footer">
     <div class="footer-area">
       <div class="container">
@@ -131,7 +133,7 @@
               <h4 class="footer_title large_title">Our Mission</h4>
               <p>
                 Our goal is to create a platform where everyone can take
-                                what they need or sell what is no longer useful
+                what they need or sell what is no longer useful
               </p>
               <p>
                 Mutual assistance is the key to efficiency
@@ -139,15 +141,13 @@
             </div>
           </div>
           <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget tp_widgets">
+            <div class="single-footer-widget">
               <h4 class="footer_title">Quick Links</h4>
               <ul class="list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Product</a></li>
-                <li><a href="#">Brand</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'category' %}">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'category' %}">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -173,7 +173,7 @@
                   Head Office
                 </p>
                 <p>123, Main Street, Your City</p>
-  
+
                 <p class="sm-head">
                   <span class="fa fa-phone"></span>
                   Phone Number
@@ -182,7 +182,7 @@
                   +996 706 106888 <br>
                   +996 999 123479
                 </p>
-  
+
                 <p class="sm-head">
                   <span class="fa fa-envelope"></span>
                   Email
@@ -212,4 +212,5 @@
   <script src="{% static '/aroma/vendors/mail-script.js' %}"></script>
   <script src="{% static '/aroma/js/main.js' %}"></script>
 </body>
+
 </html>
