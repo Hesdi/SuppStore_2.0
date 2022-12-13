@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{% static '/aroma/vendors/owl-carousel/owl.carousel.min.css' %}">
   <link rel="stylesheet" href="{% static '/main/css/profile.css' %}">
   <link rel="stylesheet" href="{% static '/main/css/category.css' %}">
+  <link rel="stylesheet" href="{% static '/main/css/main.css' %}">
 
   <link rel="stylesheet" href="{% static '/aroma/css/style.css' %}">
 </head>
@@ -81,6 +82,7 @@
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-{{ message.tags }}">
+              <div class="close-alert">X</div>
               {{ message }}
             </div>
             {% endfor %}
@@ -211,6 +213,7 @@
   <script src="{% static '/aroma/vendors/jquery.ajaxchimp.min.js' %}"></script>
   <script src="{% static '/aroma/vendors/mail-script.js' %}"></script>
   <script src="{% static '/aroma/js/main.js' %}"></script>
+  <script src="{% static '/main/js/main.js' %}"></script>
 </body>
 
 </html>

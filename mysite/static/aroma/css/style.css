@@ -64,7 +64,6 @@ a {
 }
 .fixed {
   background: #fff;
-  position: fixed!important;
   top: 0;
   left: 0;
   width: 100%!important
@@ -114,7 +113,7 @@ a {
   margin-left: 40px
 }
 .header_area {
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 9999;
   transition: background .4s,all .3s linear;
