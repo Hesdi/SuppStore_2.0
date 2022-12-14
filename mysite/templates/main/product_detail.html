@@ -34,6 +34,7 @@
 		  <h2 class="article-title">{{ object.prod_name }}</h2>
 		  <p class="article-content">{{ object.prod_description }}</p>
 		  <p class="article-content prod-price">{{ object.prod_price }}$</p>
+		  <img src="{{ object.prod_image.url }}">
 		  <p class="article-content">{{ object.category }}</p>
 			<small class="text-muted">{{ object.prod_date|date:"F d, Y" }}</small>
 			{% if object.author == user %}
