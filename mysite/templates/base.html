@@ -73,7 +73,9 @@
           </div>
           <div class="navbar-nav">
             {% if user.is_authenticated %}
+            {% if user.is_superuser %}
             <a class="nav-item nav-link" href="{% url 'product-create' %}">Add product</a>
+            {% endif %}
             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
             {% else %}
             <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
