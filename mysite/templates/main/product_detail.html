@@ -25,21 +25,17 @@
 		<div class="container">
 			<div class="row s_product_inner">
 				<div class="col-lg-6">
-					<div class="owl-carousel owl-theme s_Product_carousel">
-						<div class="single-prd-item">
-							<img class="img-fluid" src="{{ object.prod_image.url }}" alt="">
-						</div>
+							<img class="img-fluid" width="400" src="{{ object.prod_image.url }}" alt="">
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
 						</div>
 						<div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
 						</div> -->
-					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<p><img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+						<p><img class="rounded-circle article-img" width="71" src="{{ object.author.profile.image.url }}">
 							<a class="black-link" href="{% url 'user-products' object.author.username %}">@{{ object.author }}'s</a></p>
 						<h3>{{ object.prod_name }}</h3>
 						<h2>${{ object.prod_price }}</h2>

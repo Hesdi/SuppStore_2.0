@@ -2,7 +2,7 @@
   margin: 10px;
   padding: 20px ;
   box-shadow: 5px 5px 10px rgba(118, 118, 118, 0.518);
-  flex: 1 1 200px;
+  flex: 0 1 200px;
 }
 .category-list{
   display: flex;
