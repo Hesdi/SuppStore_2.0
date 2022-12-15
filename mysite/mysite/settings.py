@@ -25,6 +25,13 @@ SECRET_KEY = 'django-insecure-&j%h=x=n!*q$@r*m(bgi26s2-5sar5c-mdhw3vnq@$inbvr0%x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51MF7o5IN2BP0xmFwU3uXYFmSm0HSNWKNzCxU8KpbbeTkrQjUy88VePY24liz1AjzufQU2flfUb2muw7k9cHCVYjM006Ku0er0x'
+STRIPE_SECRET_KEY = 'sk_test_51MF7o5IN2BP0xmFw2T4UfHC75OK8P1iWmPAq3lMNyMuGhaBtyLEHIWJEo79DGtFePw7cuMlhEyjFy6PwwR1Aj5M600qbk07MJV'
+BT_ENVIRONMENT='sandbox'
+BT_MERCHANT_ID='YOUR BT_MERCHANT_ID'
+BT_PUBLIC_KEY='YOUR BT_PUBLIC_KEY'
+BT_PRIVATE_KEY='YOUR BT_PRIVATE_KEY'
+
 ALLOWED_HOSTS = []
 
 
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shopping_cart'
 ]
 
 MIDDLEWARE = [
