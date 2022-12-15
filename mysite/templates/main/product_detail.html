@@ -21,40 +21,6 @@
 	</section>
 	<!-- ================ end banner area ================= -->
 
-
-  <!--================Single Product Area =================-->
-
-	<article class="media content-section">
-		<img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
-		<div class="product-info">
-		  <div class="article-metadata">
-			<a class="black-link" href="{% url 'user-products' object.author.username %}">@{{ object.author }}'s</a>
-
-		  </div>
-		  <h2 class="article-title">{{ object.prod_name }}</h2>
-		  <p class="article-content">{{ object.prod_description }}</p>
-		  <p class="article-content prod-price">{{ object.prod_price }}$</p>
-		  <img src="{{ object.prod_image.url }}">
-		  <p class="article-content">{{ object.category }}</p>
-			<small class="text-muted">{{ object.prod_date|date:"F d, Y" }}</small>
-			{% if object in user.profile.orders.all %}
-            <!-- add a button here to see the product -->
-            You own this
-            {% elif object in current_order_products %}
-            <a href="{% url 'order_summary' %}" class="btn btn-warning">Go to Cart</a>
-            {% else %}
-            <a href="{% url 'add_to_cart' object.id %}" class="btn btn-warning">Add to Cart</a>
-            {% endif %}
-			{% if object.author == user %}
-			  <div>
-				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product-update' object.id %}">Редактировать</a>
-				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product-delete' object.id %}">Удалить</a>
-			  </div>
-			{% endif %}
-		</div>
-	  </article>
-		
-	<!--================End Single Product Area =================-->
 	<div class="product_image_area">
 		<div class="container">
 			<div class="row s_product_inner">
@@ -80,6 +46,7 @@
 						<ul class="list">
 							<li><a class="active" href="#"><span>Category</span> : {{ object.category }}</a></li>
 							<li><a href="#"><span>Availibility</span> : In Stock</a></li>
+							<small class="text-muted">{{ object.prod_date|date:"F d, Y" }}</small>
 						</ul>
 						<p>{{ object.prod_description }}</p>
 						<div class="product_count">
