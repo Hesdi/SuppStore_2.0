@@ -42,7 +42,11 @@
                               <td>
                                   <div class="media">
                                       <div class="d-flex">
+<<<<<<< HEAD
                                           <img src="{{ item.product.prod_image.url }}" alt="">
+=======
+                                          <img src="{% static 'aroma/img/cart/cart1.png' %}" alt="">
+>>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423
                                       </div>
                                       <div class="media-body">
                                           <p>{{ item.product.prod_name }}</p>
@@ -61,11 +65,14 @@
                                       <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
                                           class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                                   </div>
+<<<<<<< HEAD
                                   <span class="pull-right">
                                     <a href="{% url 'delete_item' item.id %}" data-balloon="remove this item from cart" class="text-danger" onclick="return confirm_delete();">
                                       <i class="fas fa-trash"></i>
                                     </a>
                                   </span>
+=======
+>>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423
                               </td>
                               <td>
                                   <h5>{{ item.product.prod_price }}</h5>
@@ -76,7 +83,66 @@
                             <td colspan= 3> You have not added any items yet.</td>
                             </tr>
                         {% endfor %}
+<<<<<<< HEAD
                         
+=======
+                          <tr>
+                              <td>
+                                  <div class="media">
+                                      <div class="d-flex">
+                                          <img src="{% static 'aroma/img/cart/cart2.png' %}" alt="">
+                                      </div>
+                                      <div class="media-body">
+                                          <p>Minimalistic shop for multipurpose use</p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td>
+                                  <h5>$360.00</h5>
+                              </td>
+                              <td>
+                                  <div class="product_count">
+                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
+                                          class="input-text qty">
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                                  </div>
+                              </td>
+                              <td>
+                                  <h5>$720.00</h5>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div class="media">
+                                      <div class="d-flex">
+                                          <img src="{% static 'aroma/img/cart/cart3.png' %}" alt="">
+                                      </div>
+                                      <div class="media-body">
+                                          <p>Minimalistic shop for multipurpose use</p>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td>
+                                  <h5>$360.00</h5>
+                              </td>
+                              <td>
+                                  <div class="product_count">
+                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
+                                          class="input-text qty">
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                                  </div>
+                              </td>
+                              <td>
+                                  <h5>$720.00</h5>
+                              </td>
+                          </tr>
+>>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423
                           <tr class="bottom_button">
                               <td>
                                   <a class="button" href="#">Update Cart</a>
@@ -167,6 +233,7 @@
       </div>
   </section>
   <!--================End Cart Area =================-->
+<<<<<<< HEAD
 {%endblock%}
 {% block scripts %}
   {{ block.super }}
@@ -176,3 +243,6 @@
   }
   </script>
 {% endblock scripts %}
+=======
+{%endblock%}
+>>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423

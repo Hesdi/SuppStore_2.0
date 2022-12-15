@@ -11,7 +11,10 @@ from django.views.generic import (
 )
 from .models import Product
 from shopping_cart.models import Order
+<<<<<<< HEAD
 from django.db.models import Q
+=======
+>>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423
 # Create your views here.
 
 
