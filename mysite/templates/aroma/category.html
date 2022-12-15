@@ -32,11 +32,15 @@
               <li class="common-filter">
                 <form action="#">
                   <ul>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men">Men<span> (3600)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><label for="women">Women<span> (3600)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="accessories" name="brand"><label for="accessories">Accessories<span> (3600)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="footwear" name="brand"><label for="footwear">Footwear<span> (3600)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="bayItem" name="brand"><label for="bayItem">Bay item<span> (3600)</span></label></li>
+                    <!-- {% for category in categories %}
+                    <a href="{% url 'category' %}?q={{product.category}}"><li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men">{{product.category}}<span> (3600)</span></label></li></a>
+                    {% endfor %} -->
+                    
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=">All</a></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Building Supplies">Building Supplies</a></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Tools">Tools</a></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Electrics">Electrics</a></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Engineering Systems">Engineering Systems</a></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="electronics" name="brand"><label for="electronics">Electronics<span> (3600)</span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand"><label for="food">Food<span> (3600)</span></label></li>
                   </ul>
@@ -105,13 +109,14 @@
                 <option value="1">Show 12</option>
               </select>
             </div>
+            <span> ({{prod_count}}) items found</span>
             <div>
-              <div class="input-group filter-bar-search">
-                <input type="text" placeholder="Search">
+              <form method="GET" action="{% url 'category' %}"><div class="input-group filter-bar-search">
+                <input type="text" name="q" placeholder="Search">
                 <div class="input-group-append">
                   <button type="button"><i class="ti-search"></i></button>
                 </div>
-              </div>
+              </div></form>
             </div>
           </div>
           <!-- End Filter Bar -->

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -9,12 +10,28 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Product
+from shopping_cart.models import Order
+from django.db.models import Q
 # Create your views here.
 
 
 def category(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+
+    products = Product.objects.filter(
+        Q(category__icontains=q) |
+        Q(prod_name__icontains=q) |
+        Q(prod_description__icontains=q)
+    )
+
+    categories = Product.Category.choices
+
+    prod_count = products.count()
+    # room_messages = Message.objects.filter(
+    #     Q(room__topic__name__icontains=q))[0:3]
+
     context = {
-        'products': Product.objects.all()
+        'products': products, 'prod_count': prod_count, 'categories': categories
     }
     return render(request, 'aroma/category.html', context)
 
@@ -25,10 +42,6 @@ def cart(request):
 
 def confirmation(request):
     return render(request, 'aroma/confirmation.html')
-
-
-def checkout(request):
-    return render(request, 'aroma/checkout.html')
 
 
 def contact(request):
@@ -96,7 +109,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
 
 class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Product
-    fields = ['prod_name', 'prod_description', 'prod_price', 'category', 'image']
+    fields = ['prod_name', 'prod_description', 'prod_price', 'category', 'prod_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -118,3 +131,20 @@ class ProductDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == product.author:
             return True
         return False
+
+@login_required
+def product_list(request):
+    object_list = Product.objects.all()
+    filtered_orders = Order.objects.filter(owner=request.user.profile, is_ordered=False)
+    current_order_products = []
+    if filtered_orders.exists():
+        user_order = filtered_orders[0]
+        user_order_items = user_order.items.all()
+        current_order_products = [product.product for product in user_order_items]
+
+    context = {
+        'object_list': object_list,
+        'current_order_products': current_order_products
+    }
+
+    return render(request, "product_list.html", context)

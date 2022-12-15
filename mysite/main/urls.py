@@ -10,10 +10,9 @@ from .views import (
 from . import views
 
 urlpatterns = [
+    path('product-list/', views.product_list, name='product-list'),
     path('category/', views.category, name='category'),
-    path('cart/', views.cart, name='cart'),
     path('confirmation/', views.confirmation, name='confirmation'),
-    path('checkout/', views.checkout, name='checkout'),
     path('blog/', views.blog, name='blog'),
     path('single-blog/', views.single_blog, name='single-blog'),
     path('tracking-order/', views.tracking_order, name='tracking-order'),
