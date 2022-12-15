@@ -54,11 +54,8 @@ def delete_from_cart(request, item_id):
     if item_to_delete.exists():
         item_to_delete[0].delete()
         messages.info(request, "Item has been deleted")
-<<<<<<< HEAD
+
     return redirect(reverse('order_summary'))
-=======
-    return redirect(reverse('shopping_cart:order_summary'))
->>>>>>> dcde77094d473db2565842e8bbaa97853d3d0423
 
 
 @login_required()
