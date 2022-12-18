@@ -11,7 +11,11 @@
   top: -15px;
   left: 120px;
 }
+.nav-row{
 
+ display: flex!important;
+ flex-direction: row!important;
+}
 .black-link{
   color: rgb(55, 55, 55);
 }
