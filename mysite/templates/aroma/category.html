@@ -35,81 +35,22 @@
                     <!-- {% for category in categories %}
                     <a href="{% url 'category' %}?q={{product.category}}"><li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men">{{product.category}}<span> (3600)</span></label></li></a>
                     {% endfor %} -->
-                    
+
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=">All</a></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Building Supplies">Building Supplies</a></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Tools">Tools</a></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Electrics">Electrics</a></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Engineering Systems">Engineering Systems</a></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="electronics" name="brand"><label for="electronics">Electronics<span> (3600)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand"><label for="food">Food<span> (3600)</span></label></li>
                   </ul>
                 </form>
               </li>
             </ul>
           </div>
-          <div class="sidebar-filter">
-            <div class="top-filter-head">Product Filters</div>
-            <div class="common-filter">
-              <div class="head">Brands</div>
-              <form action="#">
-                <ul>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
-                </ul>
-              </form>
-            </div>
-            <div class="common-filter">
-              <div class="head">Color</div>
-              <form action="#">
-                <ul>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
-                      Leather<span>(29)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
-                      with red<span>(19)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
-                </ul>
-              </form>
-            </div>
-            <div class="common-filter">
-              <div class="head">Price</div>
-              <div class="price-range-area">
-                <div id="price-range"></div>
-                <div class="value-wrapper d-flex">
-                  <div class="price">Price:</div>
-                  <span>$</span>
-                  <div id="lower-value"></div>
-                  <div class="to">to</div>
-                  <span>$</span>
-                  <div id="upper-value"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">
           <!-- Start Filter Bar -->
           <div class="filter-bar d-flex flex-wrap align-items-center">
-            <div class="sorting">
-              <select>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-              </select>
-            </div>
-            <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-              </select>
-            </div>
-            <span> ({{prod_count}}) items found</span>
             <div>
               <form method="GET" action="{% url 'category' %}"><div class="input-group filter-bar-search">
                 <input type="text" name="q" placeholder="Search">
@@ -140,7 +81,7 @@
                     <p class="card-product__price">${{ product.prod_price }}</p>
                   </div>
                 </div> -->
-                
+
               <div class="product-card">
                 <div class="media-body">
                   <img src="{{product.prod_image.url}}" width="200" />
@@ -153,13 +94,13 @@
                 {% endfor %}
                 <div class="pagination justify-content-center">
                   {% if is_paginated %}
-              
+
                     {% if page_obj.has_previous %}
-              
+
                       <a class="btn btn-outline-info mb-4 mr-1" href="?page=1">Первая</a>
                       <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
                     {% endif %}
-              
+
                     {% for num in page_obj.paginator.page_range %}
                       {% if page_obj.number == num %}
                         <a class="btn btn-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
@@ -167,12 +108,12 @@
                         <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
                       {% endif %}
                     {% endfor %}
-              
+
                     {% if page_obj.has_next %}
                       <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.next_page_number }}">Следующая</a>
                       <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
                     {% endif %}
-              
+
                   {% endif %}
                 </div>
               </div>
