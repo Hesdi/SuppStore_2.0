@@ -48,9 +48,10 @@
 #id_image{
   border: none;
 }
-.form-group button{
-  transform: scale(1.2) translateY(30px);
+.form-group button {
+    margin-right: 30px;
 }
+
 .helptext{
   display: none;
 }

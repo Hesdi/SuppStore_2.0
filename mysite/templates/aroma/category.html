@@ -36,11 +36,11 @@
                     <a href="{% url 'category' %}?q={{product.category}}"><li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label for="men">{{product.category}}<span> (3600)</span></label></li></a>
                     {% endfor %} -->
 
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=">All</a></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Building Supplies">Building Supplies</a></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Tools">Tools</a></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Electrics">Electrics</a></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand"><a href="{% url 'category' %}?q=Engineering Systems">Engineering Systems</a></li>
+                    <li class="filter-list"><a href="{% url 'category' %}?q=">All</a></li>
+                    <li class="filter-list"><a href="{% url 'category' %}?q=Building Supplies">Building Supplies</a></li>
+                    <li class="filter-list"><a href="{% url 'category' %}?q=Tools">Tools</a></li>
+                    <li class="filter-list"><a href="{% url 'category' %}?q=Electrics">Electrics</a></li>
+                    <li class="filter-list"><a href="{% url 'category' %}?q=Engineering Systems">Engineering Systems</a></li>
                   </ul>
                 </form>
               </li>
